@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.jumplist {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.active,
+.jumplist:hover,
+.custom,
+.custom:hover {
+    color: red;
+}
+
+
+header.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+
+.max-height {
+    flex: 1;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.albin_img {
+    border-radius: 150px;
+}
