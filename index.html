@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My web projects.">
+    <meta name="author" content="Albin Zebi">
+    <title>Projects - Albin</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-512x512.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .btn-bd-primary {
+            --bd-gray-bg: #b0b0b0;
+            --bd-gray-rgb: 176, 176, 176;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-gray-bg);
+            --bs-btn-border-color: var(--bd-gray-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #909090;
+            --bs-btn-hover-border-color: #909090;
+            --bs-btn-focus-shadow-rgb: var(--bd-gray-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #707070;
+            --bs-btn-active-border-color: #707070;
+
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                <use href="#circle-half"></use>
+            </svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#sun-fill"></use>
+                    </svg>
+                    Light
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#moon-stars-fill"></use>
+                    </svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+                    aria-pressed="true">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#circle-half"></use>
+                    </svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+
+        <symbol id="arrow-right-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+        </symbol>
+    </svg>
+
+
+
+
+
+
+    <header class="p-1 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-3 custom fs-4">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link px-3 text-white fs-4">Contact</a></li>
+                    <li><a href="about.html" class="nav-link px-3 text-white fs-4">About</a></li>
+
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center">
+
+                <ul class="nav col-12 col-lg-auto justify-content-center mb-md-0">
+                    <li><a href="#section1" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section2" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section3" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section4" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section5" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section6" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section7" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section8" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section9" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section_a" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section_b" class="jumplist nav-link px-3 fs-3">o</a></li>
+                    <li><a href="#section_c" class="jumplist nav-link px-3 fs-3">o</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-5 section" id="section1">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="newsletters.html"><img class="img-fluid" src="assets/images/newsletters.jpg" width="1000"
+                    height="auto" alt="Email newsletters/DEM" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">Email newsletters/DEM
+            </h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Email newsletters/DEM created by me using stripo.email. You will find more than 100 examples in this
+                repository.
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="newsletters.html"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/newsletters"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5 section" id="section2">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://stopreflussoegastrite.it/" target="_blank"><img class="img-fluid"
+                    src="assets/images/stop_reflusso_e_gastrite.jpg" width="1000" height="auto"
+                    alt="Stop REFLUSSO E GASTRITE" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">Stop REFLUSSO E GASTRITE
+            </h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Simple website built by me for Dr. Serena Missori.
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://stopreflussoegastrite.it/"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/stopreflussoegastrite"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5 section" id="section3">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://www.gileadrcpupdate.it/blv.php" target="_blank"><img class="img-fluid"
+                    src="assets/images/hepcludex.jpg" width="1000" height="auto"
+                    alt="HEPCLUDEX (bulevirtide) Foglio illustrativo" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">HEPCLUDEX (bulevirtide) Foglio illustrativo
+            </h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Simple page built by me called Hepcludex (bulevirtide).
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://www.gileadrcpupdate.it/blv.php"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/hepcludex"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 section" id="section4">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://www.ladietaperglicemiaeinsulina.it/" target="_blank"><img class="img-fluid"
+                    src="assets/images/la_dieta_per_glicemia_e_insulina.jpg" width="1000" height="auto"
+                    alt="La dieta per GLICEMIA e INSULINA" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">La dieta per GLICEMIA e INSULINA</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Simple website built by me for Dr. Serena Missori.
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://www.ladietaperglicemiaeinsulina.it/"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/ladietaperglicemiaeinsulina"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 section" id="section5">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://deiplus.build.it/" target="_blank"><img class="img-fluid" src="assets/images/deiplus.jpg"
+                    width="1000" height="auto" alt="DEIPLUS Premium" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">DEIPLUS Premium</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                The frontend of this website was built by me.
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://deiplus.build.it/"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/deiplus"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 section" id="section6">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://albinzebi.github.io/biepi/" target="_blank"><img class="img-fluid"
+                    src="assets/images/biepi.jpg" width="1000" height="auto" alt="Biepi" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">Biepi</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Simple landing page built by me.
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://albinzebi.github.io/biepi/"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/biepi" class="btn btn-outline-secondary btn-lg px-4 rounded-pill"
+                    role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 section" id="section7">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://www.serena-cucina.it/" target="_blank"><img class="img-fluid"
+                    src="assets/images/serena-cucina.jpg" width="1000" height="auto" alt="Serena Cucina"
+                    title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">Serena Cucina</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Website built by me for Dr. Serena Missori.
+
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://www.serena-cucina.it/"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/serena-cucina"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container my-5 section" id="section8">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://albinzebi.github.io/mvag/CS50/cs50PythonAndJavascript/index.html" target="_blank"><img
+                    class="img-fluid" src="assets/images/google_search_clone.jpg" width="1000" height="auto"
+                    alt="Google search clone" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">Google search clone</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                A simple project with basic functionality and a similar style to the Google search website. Contains 3
+                pages: Google homepage clone, Google image search clone, and Google advanced search clone.
+
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://albinzebi.github.io/mvag/CS50/cs50PythonAndJavascript/index.html"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/mvag/tree/master/CS50/cs50PythonAndJavascript"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 section" id="section9">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://scratch.mit.edu/projects/531001598" target="_blank"><img class="img-fluid"
+                    src="assets/images/save_the_lady_game.jpg" width="1000" height="auto" alt="saveTheLady game"
+                    title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">saveTheLady game</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                A simple game created using Scratch.
+
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://scratch.mit.edu/projects/531001598"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 section" id="section_a">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://albinzebi.github.io/mvag/albport0220/tekst.html" target="_blank"><img class="img-fluid"
+                    src="assets/images/news_website_prototype.jpg" width="1000" height="auto"
+                    alt="News website prototype" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">News website prototype</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                A simple news website prototype, built to have more than one HTML page.
+
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://albinzebi.github.io/mvag/albport0220/tekst.html"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/mvag/tree/master/albport0220"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5 section" id="section_b">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://albinzebi.github.io/mvag/life/index.html" target="_blank"><img class="img-fluid"
+                    src="assets/images/html_email_newsletter.jpg" width="1000" height="auto" alt="HTML email newsletter"
+                    title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">HTML email newsletter</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Built only using HTML, the table element, and inline CSS, without using flex or other modern CSS that
+                may not be supported on all email clients.
+
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://albinzebi.github.io/mvag/life/index.html"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/mvag/tree/master/life"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 section" id="section_c">
+        <div class="p-5 text-center bg-body-secondary rounded-3">
+            <a href="https://albinzebi.github.io/mvag/albtube/tekst.html" target="_blank"><img class="img-fluid"
+                    src="assets/images/favorite_youtube_channels.jpg" width="1000" height="auto"
+                    alt="Favorite youtube channels" title="Open project"></a>
+            <h1 class="text-body-emphasis pt-3">Favorite YouTube channels</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                A simple website where I have embedded my most liked YouTube channels.
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <a href="https://albinzebi.github.io/mvag/albtube/tekst.html"
+                    class="d-inline-flex align-items-center btn btn-secondary btn-lg px-4 rounded-pill" role="button"
+                    target="_blank">
+                    Open project
+                    <svg class="bi ms-2" width="24" height="24">
+                        <use xlink:href="#arrow-right-short" />
+                    </svg>
+                </a>
+                <a href="https://github.com/albinzebi/mvag/tree/master/albtube"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill" role="button" target="_blank">
+                    GitHub repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-bg-dark">
+        <footer class="py-5">
+
+            <p class="text-center text-light">&copy;
+                <script>document.write(new Date().getFullYear())</script> Albin Zebi, All Rights Reserved
+            </p>
+        </footer>
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+
+</body>
+
+</html>
