@@ -106,7 +106,7 @@ window.addEventListener('resize', updateClassesD);
 
 
 window.onload = function () {
-    const unwantedHashes = ["#section1", "#section2", "#section3", "#section4", "#section5", "#section6", "#section7", "#section8", "#section9", "#section_a", "#section_b", "#section_c"];
+    const unwantedHashes = ["#section1", "#section2", "#section3", "#section4", "#section5", "#section6", "#section7", "#section8", "#section9", "#section_a", "#section_b"];
     if (unwantedHashes.includes(window.location.hash)) {
         window.location.href = window.location.href.split("#")[0];
     }
