@@ -1,7 +1,8 @@
+const jumplists = document.querySelectorAll('.jumplist');
+
+// update jumplists when scrolling
 document.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('.section');
-    const jumplists = document.querySelectorAll('.jumplist');
-
     let currentSection = '';
 
     sections.forEach(section => {
@@ -28,42 +29,52 @@ document.addEventListener('scroll', function () {
 });
 
 
-function updateClassesS() {
-    const jumplinks = document.querySelectorAll('.jumplist.px-3');
+// update jumplist padding and text size
+function updateJumplistPadding() {
     if (window.innerWidth <= 767) {
-        jumplinks.forEach(link => {
-            link.classList.remove('px-3');
-            link.classList.add('px-1');
-            link.classList.remove('fs-3');
-            link.classList.add('fs-4');
+        jumplists.forEach(list => {
+            list.classList.remove('px-3', 'fs-3');
+            list.classList.add('px-1', 'fs-4');
+        });
+    } else {
+        jumplists.forEach(list => {
+            list.classList.remove('px-1', 'fs-4');
+            list.classList.add('px-3', 'fs-3');
         });
     }
 }
 
+updateJumplistPadding();
 
-updateClassesS();
+window.addEventListener('resize', updateJumplistPadding);
 
-window.addEventListener('resize', updateClassesS);
 
-function updateClassesL() {
-    const jumplinks = document.querySelectorAll('.jumplist.px-1');
-    if (window.innerWidth > 767) {
-        jumplinks.forEach(link => {
-            link.classList.remove('px-1');
-            link.classList.add('px-3');
-            link.classList.remove('fs-4');
-            link.classList.add('fs-3');
+// modify section padding
+function updateSectionPadding() {
+    const sections = document.querySelectorAll('.p-5');
+    if (window.innerWidth <= 767) {
+        sections.forEach(section => {
+
+            section.classList.add('px-3');
+
+        });
+    } else {
+        sections.forEach(section => {
+
+            section.classList.remove('px-3');
+
         });
     }
 }
 
+updateSectionPadding();
 
-updateClassesL();
+window.addEventListener('resize', updateSectionPadding);
 
-window.addEventListener('resize', updateClassesL);
 
+// make header sticky
 window.addEventListener('scroll', function () {
-    var header = document.querySelector('header');
+    const header = document.querySelector('header');
     if (window.scrollY > 0) {
         header.classList.add('sticky');
     } else {
@@ -72,43 +83,14 @@ window.addEventListener('scroll', function () {
 });
 
 
-function updateClassesM() {
-    const jumplinks = document.querySelectorAll('.p-5');
-    if (window.innerWidth <= 767) {
-        jumplinks.forEach(link => {
-
-            link.classList.add('px-3');
-
-        });
-    }
-}
-
-
-updateClassesM();
-
-window.addEventListener('resize', updateClassesM);
-
-function updateClassesD() {
-    const jumplinks = document.querySelectorAll('.p-5');
-    if (window.innerWidth > 767) {
-        jumplinks.forEach(link => {
-
-            link.classList.remove('px-3');
-
-        });
-    }
-}
-
-
-updateClassesD();
-
-window.addEventListener('resize', updateClassesD);
-
-
+// remove hashes from URL when refreshing page
 window.onload = function () {
-    const unwantedHashes = ["#section1", "#section2", "#section3", "#section4", "#section5", "#section6", "#section7", "#section8", "#section9", "#section_a", "#section_b", "#section_c"];
+    // Dynamically collect all section IDs into an array
+    const sections = document.querySelectorAll('.section');
+    const unwantedHashes = Array.from(sections).map(section => `#${section.getAttribute('id')}`);
+
+    // Check if the current hash is unwanted and remove it from the URL
     if (unwantedHashes.includes(window.location.hash)) {
         window.location.href = window.location.href.split("#")[0];
     }
-}
-
+};
